@@ -2,10 +2,11 @@ version: '3.3'
 services:
   db:
     image: mysql:8.0
+    container_name: "java-Db"
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: 'superSenhaSecreta'
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - '3306:3306'
     expose:
