@@ -12,14 +12,13 @@ public class ConexaoMySQL {
     private String user = dotenv.get("MYSQL_USER");
     private String password = dotenv.get("MYSQL_PASSWORD");
 
-    public Connection conectar(){
+    public Connection conectar() throws Exception {
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, password);
             return con;
         }catch (Exception e){
-            System.out.println(e);
-            return null;
+            throw new Exception(String.format("Erro ao conectar no banco\n Erro: %s", e));
         }
     }
 
