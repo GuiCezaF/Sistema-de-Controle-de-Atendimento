@@ -1,7 +1,5 @@
 package main.conexoes;
 
-import main.conexoes.ConexaoMySQL;
-
 import java.sql.Connection;
 
 public class testeDb {
