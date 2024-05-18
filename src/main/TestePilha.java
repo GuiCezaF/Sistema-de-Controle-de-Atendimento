@@ -27,6 +27,7 @@ public class TestePilha {
         // Listar as senhas na pilha após atender uma senha
         System.out.println("Senhas na pilha IDOSO após atender uma senha:");
         System.out.println(pilhaIdoso.listar());
+        System.out.println(pilhaIdoso.chamar());
     }
 
 }
