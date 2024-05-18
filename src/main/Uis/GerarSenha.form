@@ -135,7 +135,7 @@
         </constraints>
         <properties>
           <font size="16"/>
-          <text value="      "/>
+          <text value=""/>
         </properties>
       </component>
     </children>

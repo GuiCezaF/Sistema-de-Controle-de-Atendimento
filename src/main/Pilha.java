@@ -17,7 +17,7 @@ public class Pilha extends EstrategiaLIFO {
         Senha senha = new Senha();
         senha.gerarSenha();
         pilha.push(senha);
-        return senha.retornarSenha();
+        return String.format(" %s - %s ", tipoLista.tipo, senha.retornarSenha());
     }
 
     @Override

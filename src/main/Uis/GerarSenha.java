@@ -1,5 +1,8 @@
 package main.Uis;
 
+import main.Pilha;
+import main.TipoLista;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +23,14 @@ public class GerarSenha extends JFrame {
         setSize(650, 300);
         setLocationRelativeTo(null);
         setVisible(true);
+
+
         BtnI60.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaIdoso = new Pilha(TipoLista.IDOSO);
 
+                lblSenha.setText(pilhaIdoso.inserir());
             }
         });
         BtnI80.addActionListener(new ActionListener() {
