@@ -28,39 +28,49 @@ public class GerarSenha extends JFrame {
         BtnI60.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Pilha pilhaIdoso = new Pilha(TipoLista.IDOSO);
+                Pilha pilhaIdoso60 = new Pilha(TipoLista.IDOSO);
 
-                lblSenha.setText(pilhaIdoso.inserir());
+                lblSenha.setText(pilhaIdoso60.inserir());
             }
         });
         BtnI80.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaIdoso80 = new Pilha(TipoLista.IDOSO80);
 
+                lblSenha.setText(pilhaIdoso80.inserir());
             }
         });
         BtnNML.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaNormal = new Pilha(TipoLista.NORMAL);
 
+                lblSenha.setText(pilhaNormal.inserir());
             }
         });
         BtnPFL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaPref = new Pilha(TipoLista.PREFERENCIAL);
 
+                lblSenha.setText(pilhaPref.inserir());
             }
         });
         BtnURG.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaUrg = new Pilha(TipoLista.URGENTE);
 
+                lblSenha.setText(pilhaUrg.inserir());
             }
         });
         BtnVIP.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Pilha pilhaVIP = new Pilha(TipoLista.VIP);
 
+                lblSenha.setText(pilhaVIP.inserir());
             }
         });
     }
