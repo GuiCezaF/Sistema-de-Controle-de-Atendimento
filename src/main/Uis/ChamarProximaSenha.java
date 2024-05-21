@@ -1,3 +1,15 @@
+/*
+ * Disciplina: Programação Orientada a Objetos
+ *
+ * Autores: Gabriel Eduardo Alves da Silva ; RA: 196046
+ *          Guilherme Cezarino Felioe ; RA: 195249
+ *          Felipe Zamariolli Lacerda Guedes ; RA: 196239
+ *
+ * Atividade Final 3EC
+ *
+ * Data 13/06/2024
+ */
+
 package main.Uis;
 
 import javax.swing.*;
