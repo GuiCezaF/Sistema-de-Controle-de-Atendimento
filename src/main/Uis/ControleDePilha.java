@@ -15,6 +15,7 @@ public class ControleDePilha extends JFrame{
     private JLabel lblSenhaAntiga1;
     private JLabel lblSenhaAntiga2;
     private JLabel lblSenhaAntiga3;
+    private JLabel lblSuaSenha;
 
     public ControleDePilha(){
         setContentPane(uiPanel);
