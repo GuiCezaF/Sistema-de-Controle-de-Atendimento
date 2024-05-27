@@ -2,32 +2,50 @@ package main;
 
 public class TestePilha {
     public static void main(String[] args) {
-        Pilha pilhaIdoso = new Pilha(TipoLista.IDOSO);
+        // Criando instâncias de Pilha para diferentes tipos de lista
+        Pilha pilhaUrgente = new Pilha(TipoLista.URGENTE);
+        Pilha pilhaIdoso80 = new Pilha(TipoLista.IDOSO80);
+        Pilha pilhaIdoso60 = new Pilha(TipoLista.IDOSO);
+        Pilha pilhaPreferencial = new Pilha(TipoLista.PREFERENCIAL);
+        Pilha pilhaVip = new Pilha(TipoLista.VIP);
+        Pilha pilhaNormal = new Pilha(TipoLista.NORMAL);
 
-        pilhaIdoso.inserir();
-        pilhaIdoso.inserir();
-        pilhaIdoso.inserir();
+        // Inserindo senhas nas pilhas
+        pilhaUrgente.inserir();
+        pilhaIdoso80.inserir();
+        pilhaIdoso80.inserir();
+        pilhaIdoso60.inserir();
+        pilhaPreferencial.inserir();
+        pilhaPreferencial.inserir();
+        pilhaVip.inserir();
+        pilhaVip.inserir();
+        pilhaNormal.inserir();
+        pilhaNormal.inserir();
+        pilhaNormal.inserir();
 
-        System.out.println("Senhas na pilha IDOSO:");
-        System.out.println(pilhaIdoso.listar());
-
-        // Chamar uma senha
-        pilhaIdoso.chamar();
-
-        System.out.println("Senhas na pilha IDOSO após chamar uma senha:");
-        System.out.println(pilhaIdoso.listar());
-
-        // Listar as senhas na pilha após chamar uma senha
-        System.out.println("Senhas na pilha IDOSO após chamar uma senha:");
-        System.out.println(pilhaIdoso.listar());
-
-        // Atender a próxima senha
-        System.out.println(pilhaIdoso.atender());
-
-        // Listar as senhas na pilha após atender uma senha
-        System.out.println("Senhas na pilha IDOSO após atender uma senha:");
-        System.out.println(pilhaIdoso.listar());
-        System.out.println(pilhaIdoso.chamar());
+        // Chamar as senhas uma por uma, seguindo a ordem de prioridade global
+        String chamada;
+        do {
+            chamada = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVip, pilhaNormal);
+            System.out.println(chamada);
+        } while (!chamada.equals("Nenhuma senha disponível."));
     }
 
+    public static String chamarProximaSenha(Pilha... pilhas) {
+        for (TipoLista tipo : getOrdemPrioridade()) {
+            for (Pilha pilha : pilhas) {
+                if (pilha.getTipoLista() == tipo) {
+                    String chamada = pilha.chamar();
+                    if (!chamada.equals("Nenhuma senha disponível.")) {
+                        return chamada;
+                    }
+                }
+            }
+        }
+        return "Nenhuma senha disponível.";
+    }
+
+    public static TipoLista[] getOrdemPrioridade() {
+        return new TipoLista[]{TipoLista.URGENTE, TipoLista.IDOSO80, TipoLista.IDOSO, TipoLista.PREFERENCIAL, TipoLista.VIP, TipoLista.NORMAL};
+    }
 }

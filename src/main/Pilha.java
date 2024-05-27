@@ -1,10 +1,8 @@
 package main;
 
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class Pilha extends EstrategiaLIFO {
-
     protected LinkedList<Senha> pilha;
     private TipoLista tipoLista;
 
@@ -30,49 +28,13 @@ public class Pilha extends EstrategiaLIFO {
 
     @Override
     public String chamar() {
-        if (pilha.isEmpty()) {
-            return "";
+        Senha senha = getNextSenha();
+        if (senha != null) {
+            senha.setChamado();
+            pilha.remove(senha);
+            return String.format("%s | Senha: %s", tipoLista.tipo, senha.retornarSenha());
         }
-
-        Senha senhaPrioritaria = null;
-        ListIterator<Senha> iterator = pilha.listIterator(pilha.size());
-        while (iterator.hasPrevious()) {
-            Senha senha = iterator.previous();
-            if (senhaPrioritaria == null || compararPrioridade(senhaPrioritaria, senha) > 0) {
-                senhaPrioritaria = senha;
-            }
-        }
-
-        if (senhaPrioritaria != null) {
-            senhaPrioritaria.setChamado();
-            pilha.remove(senhaPrioritaria);
-            return String.format("%s | Senha: %s", tipoLista.tipo, senhaPrioritaria.retornarSenha());
-        }
-
-        return "";
-    }
-
-    private int compararPrioridade(Senha s1, Senha s2) {
-        return getPrioridade(s1).compareTo(getPrioridade(s2));
-    }
-
-    private Integer getPrioridade(Senha senha) {
-        switch (tipoLista.tipo) {
-            case "URG":
-                return 1;
-            case "I80":
-                return 2;
-            case "I60":
-                return 3;
-            case "PFL":
-                return 4;
-            case "VIP":
-                return 5;
-            case "NML":
-                return 6;
-            default:
-                return Integer.MAX_VALUE;
-        }
+        return "Nenhuma senha disponível.";
     }
 
     @Override
@@ -88,5 +50,18 @@ public class Pilha extends EstrategiaLIFO {
             sb.append(tipoLista.tipo).append(" ").append(senha.retornarSenha()).append("\n");
         }
         return sb.toString();
+    }
+
+    public TipoLista getTipoLista() {
+        return this.tipoLista;
+    }
+
+    private Senha getNextSenha() {
+        for (Senha senha : pilha) {
+            if (!senha.getChamado()) {
+                return senha;
+            }
+        }
+        return null;
     }
 }
