@@ -21,7 +21,7 @@ public class ControleDePilha extends JFrame{
         setContentPane(uiPanel);
         setTitle("Central de atendimento");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(800, 400);
+        setSize(850, 400);
         setLocationRelativeTo(null);
         setVisible(true);
     }
