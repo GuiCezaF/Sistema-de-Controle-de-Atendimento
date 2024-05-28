@@ -12,6 +12,7 @@ public class TestePilha {
 
         // Inserindo senhas nas pilhas
         pilhaUrgente.inserir();
+        pilhaNormal.inserir();
         pilhaIdoso80.inserir();
         pilhaIdoso80.inserir();
         pilhaIdoso60.inserir();
@@ -21,15 +22,17 @@ public class TestePilha {
         pilhaVip.inserir();
         pilhaNormal.inserir();
         pilhaNormal.inserir();
-        pilhaNormal.inserir();
+        String chamada = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVip, pilhaNormal);
+
+        System.out.println(chamada);
 
         // Chamar as senhas uma por uma, seguindo a ordem de prioridade global
-        String chamada;
-        do {
-            chamada = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVip, pilhaNormal);
-            System.out.println(chamada);
-        } while (!chamada.equals("Nenhuma senha disponível."));
-    }
+//       String chamada;
+//          chamada = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVip, pilhaNormal);
+//      do {
+//          System.out.println(chamada);
+//      } while (!chamada.equals("Nenhuma senha disponível."));
+   }
 
     public static String chamarProximaSenha(Pilha... pilhas) {
         for (TipoLista tipo : getOrdemPrioridade()) {
@@ -49,3 +52,4 @@ public class TestePilha {
         return new TipoLista[]{TipoLista.URGENTE, TipoLista.IDOSO80, TipoLista.IDOSO, TipoLista.PREFERENCIAL, TipoLista.VIP, TipoLista.NORMAL};
     }
 }
+

@@ -1,4 +1,4 @@
-package main.Uis;
+package main.Ui;
 
 import javax.swing.*;
 
