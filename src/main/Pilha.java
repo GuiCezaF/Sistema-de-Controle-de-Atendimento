@@ -1,10 +1,12 @@
 package main;
 
-import java.util.LinkedList;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Pilha extends EstrategiaLIFO {
     protected LinkedList<Senha> pilha;
     private TipoLista tipoLista;
+    private LinkedList<Senha> senhasChamadas = new LinkedList<>();
 
     public Pilha(TipoLista tipoLista) {
         this.pilha = new LinkedList<>();
@@ -16,6 +18,7 @@ public class Pilha extends EstrategiaLIFO {
         Senha senha = new Senha();
         senha.gerarSenha();
         pilha.push(senha);
+        senhasChamadas.add(senha);
         return String.format(" %s - %s ", tipoLista.tipo, senha.retornarSenha());
     }
 
@@ -46,11 +49,12 @@ public class Pilha extends EstrategiaLIFO {
     @Override
     public String listar() {
         StringBuilder sb = new StringBuilder();
-        for (Senha senha : pilha) {
-            sb.append(tipoLista.tipo).append(" ").append(senha.retornarSenha()).append("\n");
+        for (Senha senha : senhasChamadas) {
+            sb.append(senha.retornarSenha()).append("\n");
         }
         return sb.toString();
     }
+
 
     public TipoLista getTipoLista() {
         return this.tipoLista;

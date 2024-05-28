@@ -1,11 +1,10 @@
-package main.Ui;
-
-import main.Pilha;
-import main.TipoLista;
+package main;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ControleDePilha extends JFrame{
     private JPanel uiPanel;
@@ -18,7 +17,9 @@ public class ControleDePilha extends JFrame{
     private JButton BtnChamaProximo;
     private JLabel lblSuaSenha;
     private JLabel lblSenhaAtual;
-    private JList list1;
+    private JList listaSenhas;
+    List<Pilha> pilhas = new ArrayList<>();
+
 
     public ControleDePilha(){
         setContentPane(uiPanel);
@@ -34,6 +35,14 @@ public class ControleDePilha extends JFrame{
         Pilha pilhaPreferencial = new Pilha(TipoLista.PREFERENCIAL);
         Pilha pilhaVIP = new Pilha(TipoLista.VIP);
         Pilha pilhaNormal = new Pilha(TipoLista.NORMAL);
+
+        // Cria lista contendo todas as pilhas
+        pilhas.add(pilhaUrgente);
+        pilhas.add(pilhaIdoso80);
+        pilhas.add(pilhaIdoso60);
+        pilhas.add(pilhaPreferencial);
+        pilhas.add(pilhaVIP);
+        pilhas.add(pilhaNormal);
 
 
         BtnUrg.addActionListener(new ActionListener() {
@@ -83,9 +92,12 @@ public class ControleDePilha extends JFrame{
         BtnChamaProximo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Chamar Proxima senha
                 String chamar = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVIP, pilhaNormal);
                 lblSenhaAtual.setText(chamar);
 
+                // Listar Senhas
+                listaSenhas.setListData(listarChamadas(pilhas).lines().toArray());
             }
         });
     }
@@ -108,7 +120,17 @@ public class ControleDePilha extends JFrame{
         return "Nenhuma senha disponível.";
     }
 
+
     public static TipoLista[] getOrdemPrioridade() {
         return new TipoLista[]{TipoLista.URGENTE, TipoLista.IDOSO80, TipoLista.IDOSO, TipoLista.PREFERENCIAL, TipoLista.VIP, TipoLista.NORMAL};
+    }
+    private static String listarChamadas(List<Pilha> pilhas) {
+        StringBuilder sb = new StringBuilder();
+        for (Pilha pilha : pilhas) {
+//            sb.append("Prioridade ").append(pilha.getTipoLista().tipo).append(":\n");
+            sb.append(pilha.listar()).append("\n");
+
+        }
+        return sb.toString();
     }
 }

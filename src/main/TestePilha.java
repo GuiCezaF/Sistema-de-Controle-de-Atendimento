@@ -1,7 +1,12 @@
 package main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestePilha {
     public static void main(String[] args) {
+        List<Pilha> pilhas = new ArrayList<>();
+
         // Criando instâncias de Pilha para diferentes tipos de lista
         Pilha pilhaUrgente = new Pilha(TipoLista.URGENTE);
         Pilha pilhaIdoso80 = new Pilha(TipoLista.IDOSO80);
@@ -10,7 +15,19 @@ public class TestePilha {
         Pilha pilhaVip = new Pilha(TipoLista.VIP);
         Pilha pilhaNormal = new Pilha(TipoLista.NORMAL);
 
+        pilhas.add(pilhaUrgente);
+        pilhas.add(pilhaIdoso80);
+        pilhas.add(pilhaIdoso60);
+        pilhas.add(pilhaPreferencial);
+        pilhas.add(pilhaVip);
+        pilhas.add(pilhaNormal);
+
+
+
+
         // Inserindo senhas nas pilhas
+        pilhaUrgente.inserir();
+        pilhaUrgente.inserir();
         pilhaUrgente.inserir();
         pilhaNormal.inserir();
         pilhaIdoso80.inserir();
@@ -26,6 +43,11 @@ public class TestePilha {
 
         System.out.println(chamada);
 
+        System.out.println(pilhaNormal.listar());
+        System.out.println(listarChamadas(pilhas));
+
+
+
         // Chamar as senhas uma por uma, seguindo a ordem de prioridade global
 //       String chamada;
 //          chamada = chamarProximaSenha(pilhaUrgente, pilhaIdoso80, pilhaIdoso60, pilhaPreferencial, pilhaVip, pilhaNormal);
@@ -33,6 +55,14 @@ public class TestePilha {
 //          System.out.println(chamada);
 //      } while (!chamada.equals("Nenhuma senha disponível."));
    }
+   private static String listarChamadas(List<Pilha> pilhas) {
+        StringBuilder sb = new StringBuilder();
+        for (Pilha pilha : pilhas) {
+            sb.append("Prioridade ").append(pilha.getTipoLista().tipo).append(":\n");
+            sb.append(pilha.listar());
+        }
+        return sb.toString();
+    }
 
     public static String chamarProximaSenha(Pilha... pilhas) {
         for (TipoLista tipo : getOrdemPrioridade()) {
