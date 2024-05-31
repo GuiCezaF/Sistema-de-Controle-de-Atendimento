@@ -18,6 +18,7 @@ public class ControleDePilha extends JFrame{
     private JLabel lblSuaSenha;
     private JLabel lblSenhaAtual;
     private JList listaSenhas;
+    private JButton atenderButton;
     List<Pilha> pilhas = new ArrayList<>();
 
 
