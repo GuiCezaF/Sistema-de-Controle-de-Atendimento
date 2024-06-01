@@ -21,6 +21,8 @@ public class ControleDePilha extends JFrame{
     private JButton atenderButton;
     List<Pilha> pilhas = new ArrayList<>();
 
+//   TODO: Colocar as cores nas senhas( Acho que pode ser usado ANSI CODE {ex: "\u001B[30m" -> vermelho} para isso)
+
 
     public ControleDePilha(){
         setContentPane(uiPanel);
@@ -101,6 +103,12 @@ public class ControleDePilha extends JFrame{
                 listaSenhas.setListData(listarChamadas(pilhas).lines().toArray());
             }
         });
+        atenderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                atenderProximaSenha();
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -128,10 +136,21 @@ public class ControleDePilha extends JFrame{
     private static String listarChamadas(List<Pilha> pilhas) {
         StringBuilder sb = new StringBuilder();
         for (Pilha pilha : pilhas) {
-//            sb.append("Prioridade ").append(pilha.getTipoLista().tipo).append(":\n");
             sb.append(pilha.listar()).append("\n");
 
         }
         return sb.toString();
+    }
+
+    private void atenderProximaSenha() {
+        for (Pilha pilha : pilhas) {
+            String resultado = pilha.atender();
+            if (!resultado.equals("Nenhuma senha para atender.")) {
+                JOptionPane.showMessageDialog(this, resultado);
+                listaSenhas.setListData(listarChamadas(pilhas).lines().toArray());
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(this, "Nenhuma senha para atender.");
     }
 }

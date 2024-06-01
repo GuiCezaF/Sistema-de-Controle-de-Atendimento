@@ -7,6 +7,7 @@ public class Pilha extends EstrategiaLIFO {
     protected LinkedList<Senha> pilha;
     private TipoLista tipoLista;
     private LinkedList<Senha> senhasChamadas = new LinkedList<>();
+    private LinkedList<Senha> senhasAtendidas = new LinkedList<>();
 
     public Pilha(TipoLista tipoLista) {
         this.pilha = new LinkedList<>();
@@ -42,8 +43,13 @@ public class Pilha extends EstrategiaLIFO {
 
     @Override
     public String atender() {
-        remover();
-        return "Atendido";
+         for (Senha senha : senhasChamadas) {
+            if (senha.getChamado() && !senhasAtendidas.contains(senha)) {
+                senhasAtendidas.add(senha);
+                return String.format("Senha atendida: %s", senha.retornarSenha());
+            }
+        }
+        return "Nenhuma senha para atender.";
     }
 
     @Override
@@ -68,4 +74,5 @@ public class Pilha extends EstrategiaLIFO {
         }
         return null;
     }
+
 }
