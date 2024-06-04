@@ -6,7 +6,9 @@
       <xy x="20" y="20" width="830" height="436"/>
     </constraints>
     <properties>
+      <background color="-3082241"/>
       <enabled value="false"/>
+      <foreground color="-16777216"/>
     </properties>
     <border type="none"/>
     <children>
@@ -25,7 +27,9 @@
           <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="24"/>
+          <foreground color="-16777216"/>
           <text value="Selecione o tipo senha"/>
         </properties>
       </component>
@@ -34,15 +38,10 @@
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="VIP"/>
-        </properties>
-      </component>
-      <component id="4b99a" class="javax.swing.JButton" binding="BtnI80">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="IDOSO +80"/>
         </properties>
       </component>
       <component id="51d98" class="javax.swing.JButton" binding="BtnI60">
@@ -50,6 +49,9 @@
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="IDOSO +60"/>
         </properties>
       </component>
@@ -58,6 +60,9 @@
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="NORMAL"/>
         </properties>
       </component>
@@ -66,6 +71,9 @@
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="PREFERENCIAL"/>
         </properties>
       </component>
@@ -74,6 +82,9 @@
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="URGENTE"/>
         </properties>
       </component>
@@ -82,7 +93,9 @@
           <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="24"/>
+          <foreground color="-16777216"/>
           <text value="Atendimento"/>
         </properties>
       </component>
@@ -93,7 +106,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="18"/>
+          <foreground color="-16777216"/>
           <text value="Sua senha:"/>
         </properties>
       </component>
@@ -104,6 +119,7 @@
           </grid>
         </constraints>
         <properties>
+          <foreground color="-15198171"/>
           <text value="           "/>
         </properties>
       </component>
@@ -112,7 +128,9 @@
           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="22"/>
+          <foreground color="-16777216"/>
           <text value="Senha atual"/>
         </properties>
       </component>
@@ -121,8 +139,10 @@
           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="16"/>
-          <text value="Senha"/>
+          <foreground color="-15198171"/>
+          <text value="           "/>
         </properties>
       </component>
       <component id="75d24" class="javax.swing.JLabel">
@@ -130,7 +150,9 @@
           <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="22"/>
+          <foreground color="-16777216"/>
           <text value="Ultimas senhas"/>
         </properties>
       </component>
@@ -141,10 +163,13 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-1"/>
+          <background color="-3082241"/>
           <enabled value="false"/>
-          <foreground color="-16777216"/>
+          <foreground color="-15198171"/>
           <model/>
+          <opaque value="true"/>
+          <selectionBackground color="-15198171"/>
+          <selectionForeground color="-15198171"/>
         </properties>
       </component>
       <component id="6b8ab" class="javax.swing.JLabel">
@@ -154,7 +179,9 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="24"/>
+          <foreground color="-16777216"/>
           <text value="de Senhas"/>
         </properties>
       </component>
@@ -163,7 +190,9 @@
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-328705"/>
           <font size="24"/>
+          <foreground color="-16777216"/>
           <text value="Painel"/>
         </properties>
       </component>
@@ -172,6 +201,9 @@
           <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="Chamar o proximo"/>
         </properties>
       </component>
@@ -180,7 +212,21 @@
           <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
           <text value="Atender"/>
+        </properties>
+      </component>
+      <component id="274fc" class="javax.swing.JButton" binding="BtnI80">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5383962"/>
+          <focusPainted value="false"/>
+          <foreground color="-15198171"/>
+          <text value="IDOSO +80"/>
         </properties>
       </component>
     </children>
