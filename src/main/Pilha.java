@@ -9,6 +9,7 @@ public class Pilha extends EstrategiaLIFO {
     private LinkedList<Senha> senhasChamadas = new LinkedList<>();
     private LinkedList<Senha> senhasAtendidas = new LinkedList<>();
 
+
     public Pilha(TipoLista tipoLista) {
         this.pilha = new LinkedList<>();
         this.tipoLista = tipoLista;

@@ -1,6 +1,7 @@
 package main;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -20,9 +21,6 @@ public class ControleDePilha extends JFrame{
     private JList listaSenhas;
     private JButton atenderButton;
     List<Pilha> pilhas = new ArrayList<>();
-
-//   TODO: Colocar as cores nas senhas( Acho que pode ser usado ANSI CODE {ex: "\u001B[30m" -> vermelho} para isso)
-
 
     public ControleDePilha(){
         setContentPane(uiPanel);
@@ -53,6 +51,7 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaUrgente.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.red);
             }
         });
 
@@ -61,6 +60,8 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaIdoso80.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.MAGENTA);
+
             }
         });
         BtnI60.addActionListener(new ActionListener() {
@@ -68,6 +69,8 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaIdoso60.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.PINK);
+
             }
         });
         BtnPfl.addActionListener(new ActionListener() {
@@ -75,6 +78,8 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaPreferencial.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.blue);
+
             }
         });
         BtnVip.addActionListener(new ActionListener() {
@@ -82,6 +87,8 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaVIP.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.ORANGE);
+
             }
         });
         BtnNml.addActionListener(new ActionListener() {
@@ -89,6 +96,8 @@ public class ControleDePilha extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String senhaAtual = pilhaNormal.inserir();
                 lblSuaSenha.setText(senhaAtual);
+                lblSuaSenha.setForeground(Color.GREEN);
+
             }
         });
 
