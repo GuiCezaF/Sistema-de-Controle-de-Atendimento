@@ -1,12 +1,9 @@
 package main;
 
 /*
- * Disciplina Programação Orientada a Objetos
- * Guilherme Cezarino Felipe RA 195249
- * Gabriel Eduardo Alves da Silva RA 196046
- * Felipe Zamariolli Lacerda Guedes RA 196239
- * Atividade Final 3EC
- * Data 13/06/2024
+ * Autor         Prof. Marcos
+ * Data          15/03/2024
+ * Disciplina    Programação Orientada a Objetos
  */
 
 public abstract class EstrategiaLIFO {
