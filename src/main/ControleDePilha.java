@@ -1,5 +1,10 @@
 package main;
 
+/*
+ * Autores       Guilherme C. Felipe, Gabriel Eduardo A. da Silva, Felipe Z. L. Guedes
+ * Disciplina    Programação Orientada a Objetos
+*/
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
